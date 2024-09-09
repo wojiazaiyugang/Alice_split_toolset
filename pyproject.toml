@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "alice-split-toolset"
+version = "0.1.0"
+description = ""
+authors = ["wojiazaiyugang <wojiazaiyugang@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydub = "^0.25.1"
+tqdm = "^4.66.5"
+
+[[tool.poetry.source]]
+name = "ustc"
+url = "https://pypi.mirrors.ustc.edu.cn/simple/"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
