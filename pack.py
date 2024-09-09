@@ -3,6 +3,7 @@ import argparse
 import shutil
 from shutil import copyfile
 from tqdm import tqdm
+from pathlib import Path
 
 
 def process_and_rename(character_name):
@@ -29,7 +30,8 @@ def process_and_rename(character_name):
 
                 new_filename = f"{character_name}_{counter}.wav"
                 new_filepath = os.path.join(dataset_path, new_filename)
-                new_mapping_entry = f"./dataset/{character_name}/{new_filename}|{character_name}|ZH|{text}"
+                output_dir = Path(__file__).resolve().parent.joinpath("dataset")
+                new_mapping_entry = f"{output_dir}/{character_name}/{new_filename}|{character_name}|ZH|{text}"
 
                 # Copy and rename the file
                 copyfile(old_filepath, new_filepath)
